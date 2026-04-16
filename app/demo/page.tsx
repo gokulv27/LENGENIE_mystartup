@@ -195,7 +195,7 @@ export default function DemoPage() {
                 📅 Add to Google Calendar
               </a>
               <button
-                onClick={() => { setStep("pick"); setSelectedDate(""); setSelectedTime(""); setSubmitted(false); }}
+                onClick={() => { setStep("pick"); setSelectedDate(""); setSelectedTime(""); setSubmitting(false); }}
                 className="btn-outline"
               >
                 Book Another Slot
