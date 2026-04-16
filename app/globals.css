@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* DARK MODE (DEFAULT) */
+  --bg-primary: #0a0805;
+  --bg-secondary: #100e09;
+  --bg-tertiary: #181410;
+  --bg-raised: #201c14;
+  --gold-primary: #c9a84c;
+  --gold-bright: #e8c96a;
+  --gold-light: #f5e0a0;
+  --gold-muted: #7a6128;
+  --text-primary: #fff6e9;
+  --text-secondary: #c8b88a;
+  --text-tertiary: #8a7a5a;
+  --border-color: rgba(201, 168, 76, 0.18);
+  --border-strong: rgba(201, 168, 76, 0.45);
+}
+
+html.light {
+  /* LIGHT MODE */
+  --bg-primary: #fff6e9;
+  --bg-secondary: #f5e8d0;
+  --bg-tertiary: #ede0c8;
+  --bg-raised: #e5d4b8;
+  --gold-primary: #a07830;
+  --gold-bright: #7a5520;
+  --gold-light: #4a3010;
+  --gold-muted: #c8a060;
+  --text-primary: #1a140a;
+  --text-secondary: #4a3a1a;
+  --text-tertiary: #8a7a5a;
+  --border-color: rgba(100, 70, 20, 0.12);
+  --border-strong: rgba(100, 70, 20, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-inter), sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TYPOGRAPHY RULES */
+h1, h2, h3 {
+  font-family: var(--font-playfair), serif;
+  color: var(--text-primary);
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+}
+
+.price {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+
+em.gold {
+  color: var(--gold-bright);
+  font-style: normal;
+}
+
+/* Base UI Elements */
+a, button {
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+
+/* Cards */
+.card-base {
+  background-color: var(--bg-secondary);
+  border: 0.5px solid var(--border-color);
+  border-radius: 6px;
+  transition: border-color 150ms ease, transform 200ms ease;
+}
+
+.card-base:hover {
+  border-color: var(--border-strong);
+}
+
+.border-05 {
+  border-width: 0.5px;
+}
+
+/* Main Buttons */
+.btn-primary {
+  background-color: var(--gold-primary);
+  color: #000; /* Dark text for contrast on gold */
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: transform 200ms ease, background-color 150ms ease;
+  font-family: var(--font-inter), sans-serif;
+}
+.light .btn-primary {
+  color: #fff; /* White text on darker gold */
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  background-color: var(--gold-bright);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms ease, background-color 150ms ease;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.btn-outline:hover {
+  background-color: var(--gold-primary);
+  color: #000;
+  transform: scale(1.02);
+}
+.light .btn-outline:hover {
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-muted); }
+
+/* Animation timing defaults */
+.trans-150 { transition-duration: 150ms; }
+.trans-200 { transition-duration: 200ms; }
