@@ -19,11 +19,11 @@ export default function RefundPage() {
         <div className="space-y-8 text-text-secondary text-[15px] leading-relaxed">
           {[
             { title: "7-Day Money-Back Guarantee", body: "Every Lengenie plan includes a 7-day money-back guarantee from the date of purchase. If you are not satisfied with the delivered work, you may request a full refund within 7 days." },
-            { title: "How to Request a Refund", body: "Email refund@lengenie.com with your Order ID and a brief reason. We process all refund requests within 24 hours of confirmation." },
+            { title: "How to Request a Refund", body: "Email gokulvijayanandbusiness@gmail.com with your Order ID and a brief reason. We process all refund requests within 24 hours of confirmation." },
             { title: "Crypto Refunds (USDT)", body: "Refunds for USDT payments are sent to the original wallet address used during checkout within 24 hours. Network fees are not refunded." },
             { title: "Fiat Refunds (Razorpay / UPI)", body: "Refunds for Razorpay transactions are processed back to the original payment method within 5–7 business days, depending on your bank." },
             { title: "Non-Refundable Items", body: "Domain registration fees and third-party service fees (e.g., Twilio, Calendly API costs) are non-refundable once incurred." },
-            { title: "Questions", body: "For refund questions, contact: refund@lengenie.com" },
+            { title: "Questions", body: "For refund questions, contact: gokulvijayanandbusiness@gmail.com" },
           ].map(s => (
             <div key={s.title}>
               <h3 className="text-gold-bright mb-3">{s.title}</h3>

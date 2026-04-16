@@ -26,7 +26,7 @@ export default function TermsPage() {
             { title: "6. Intellectual Property", body: "Upon final payment, all deliverables become the client's property. Lengenie retains no rights to use client work in portfolios without written consent." },
             { title: "7. Limitation of Liability", body: "Lengenie's liability is limited to the amount paid for the specific service. We are not liable for indirect, incidental, or consequential damages." },
             { title: "8. Governing Law", body: "These terms are governed by the laws of the jurisdiction where Lengenie is registered. Disputes will be resolved via binding arbitration." },
-            { title: "9. Contact", body: "Legal questions: legal@lengenie.com" },
+            { title: "9. Contact", body: "Legal questions: gokulvijayanandbusiness@gmail.com" },
           ].map(s => (
             <div key={s.title}>
               <h3 className="text-text-primary mb-3">{s.title}</h3>

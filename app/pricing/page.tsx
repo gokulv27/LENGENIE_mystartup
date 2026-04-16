@@ -65,7 +65,7 @@ export default function PricingPage() {
         "5-page branded website",
         "GPT-4 AI chatbot",
         "WhatsApp & Telegram bot",
-        "Google Meet / Calendly scheduler",
+        "Google Calendar scheduler + Meet",
         "60s promo video",
         "Lead capture forms + basic SEO",
         isMonthly ? "30-day support + updates" : "NO updates or maintenance after delivery",

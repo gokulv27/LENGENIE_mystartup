@@ -78,17 +78,17 @@ export default function Footer() {
           </ul>
           <div className="space-y-2">
             <a
-              href="mailto:hello@lengenie.com"
+              href="mailto:gokulvijayanandbusiness@gmail.com"
               className="text-text-tertiary text-[14px] hover:text-gold-primary transition-colors duration-150 block"
             >
-              hello@lengenie.com
+              gokulvijayanandbusiness@gmail.com
             </a>
-            <a
+            {/* <a
               href="mailto:support@lengenie.com"
               className="text-text-tertiary text-[14px] hover:text-gold-primary transition-colors duration-150 block"
             >
               support@lengenie.com
-            </a>
+            </a> */}
           </div>
         </div>
 

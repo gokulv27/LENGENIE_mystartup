@@ -83,8 +83,8 @@ export default function OnboardingPage() {
         {/* Support */}
         <div className="text-center">
           <p className="text-text-tertiary text-[14px] mb-2">Need help with any step?</p>
-          <a href="mailto:support@lengenie.com" className="text-gold-bright font-bold hover:text-gold-primary transition-colors duration-150">
-            support@lengenie.com
+          <a href="mailto:gokulvijayanandbusiness@gmail.com" className="text-gold-bright font-bold hover:text-gold-primary transition-colors duration-150">
+            gokulvijayanandbusiness@gmail.com
           </a>
           <p className="text-text-tertiary text-[12px] mt-4">
             Typical response time: under 4 hours

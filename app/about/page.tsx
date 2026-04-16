@@ -1,6 +1,5 @@
 import GoldDivider from "@/components/GoldDivider";
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,15 +23,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Image */}
-        <div className="relative w-full h-[300px] rounded-[6px] overflow-hidden border border-border mb-16">
-          <Image
-            src="/images/ team section.jpeg"
-            alt="Lengenie Team"
-            fill
-            className="object-cover opacity-80"
-          />
-        </div>
+
 
         {/* Mission */}
         <div className="card-base p-8 mb-10">

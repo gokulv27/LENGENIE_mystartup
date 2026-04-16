@@ -5,13 +5,11 @@ import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
-    // Check initial format
-    if (document.documentElement.classList.contains("light")) {
-      setIsLight(true);
-    }
+    // Sync with actual DOM class
+    setIsLight(document.documentElement.classList.contains("light"));
   }, []);
 
   const toggleTheme = () => {

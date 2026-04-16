@@ -6,7 +6,7 @@ import ServiceCard from "@/components/ServiceCard";
 import PlanCard from "@/components/PlanCard";
 import TrustBadges from "@/components/TrustBadges";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
-import FAQAccordion from "@/components/FAQAccordion";
+
 import { Monitor, MessageSquare, Video, Database, PhoneCall, Calendar, Play } from "lucide-react";
 import { useGeoPricing } from "@/lib/useGeoPricing";
 
@@ -60,7 +60,7 @@ export default function HomePage() {
         "5-page branded website",
         "GPT-4 AI chatbot",
         "WhatsApp & Telegram bot",
-        "Google Meet scheduler/Calendly",
+        "Google Calendar scheduler + Meet",
         "60s promo video",
         "Lead capture forms",
         "Basic SEO + 30-day support",
@@ -270,10 +270,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-bg-secondary border-t border-border">
-        <FAQAccordion />
-      </section>
 
     </div>
   );
