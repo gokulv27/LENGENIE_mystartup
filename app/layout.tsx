@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: { default: "Lengenie — Your Business, Powered by AI", template: "%s | Lengenie" },
   description: "AI-powered web design, chatbots, lead generation, video & mobile apps. Launch your business website for 50% off today. USDC payments · 7-day refund.",
   keywords: "AI web design, AI chatbot, lead generation, promotional video, web scraping, business website, mobile app, USDC",
-  metadataBase: new URL("https://lengenie.com"),
+  metadataBase: new URL("https://lengenie.vercel.app"),
   openGraph: {
     title: "Lengenie — Your Business, Powered by AI",
     description: "AI-powered web & business services. 50% off today.",
     type: "website",
-    url: "https://lengenie.com",
+    url: "https://lengenie.vercel.app",
     siteName: "Lengenie",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Lengenie — AI-Powered Business Services" }],
   },
@@ -27,7 +27,7 @@ const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Lengenie",
-  url: "https://lengenie.com",
+  url: "https://lengenie.vercel.app",
   description: "AI-powered web design, chatbots, and business services agency",
   offers: [
     { "@type": "Offer", name: "Website Design", price: "30", priceCurrency: "USD" },

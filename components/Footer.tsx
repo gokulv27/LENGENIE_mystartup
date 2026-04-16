@@ -83,12 +83,20 @@ export default function Footer() {
             >
               gokulvijayanandbusiness@gmail.com
             </a>
-            {/* <a
-              href="mailto:support@lengenie.com"
-              className="text-text-tertiary text-[14px] hover:text-gold-primary transition-colors duration-150 block"
+            <a
+              href="https://wa.me/919150387791"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-tertiary text-[14px] hover:text-gold-primary transition-colors duration-150 block mt-2"
             >
-              support@lengenie.com
-            </a> */}
+              WhatsApp: +91 9150387791
+            </a>
+            <a
+              href="tel:+919150387791"
+              className="text-text-tertiary text-[14px] hover:text-gold-primary transition-colors duration-150 block mt-2"
+            >
+              Phone: +91 9150387791
+            </a>
           </div>
         </div>
 

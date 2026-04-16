@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://lengenie.com";
+  const base = "https://lengenie.vercel.app";
   const pages = ["/", "/services", "/pricing", "/checkout", "/demo", "/onboarding", "/about", "/blog", "/privacy", "/terms", "/refund"];
   return pages.map((path) => ({
     url: `${base}${path}`,

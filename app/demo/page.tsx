@@ -2,6 +2,7 @@
 
 import GoldDivider from "@/components/GoldDivider";
 import { Check, Calendar, Clock, Video, Mail } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 const benefits = [
@@ -46,7 +47,7 @@ export default function DemoPage() {
   const [selectedTime, setSelectedTime] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
   // Generate next 14 days
@@ -77,12 +78,30 @@ export default function DemoPage() {
       return;
     }
     setError("");
+    setSubmitting(true);
 
-    // Build Google Calendar "Add to calendar" URL and open in new tab
+    try {
+      // 1️⃣ Notify the owner via server-side API (formsubmit.co)
+      await fetch("/api/booking/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          date: selectedDate,
+          time: selectedTime,
+        }),
+      });
+    } catch (e) {
+      // non-blocking — don't stop the booking if notification fails
+      console.error("Owner notification failed:", e);
+    }
+
+    // 2️⃣ Open Google Calendar invite for the customer
     const inviteUrl = buildGCalInviteUrl(name, email, selectedDate, selectedTime);
     window.open(inviteUrl, "_blank", "noopener,noreferrer");
 
-    // Also send a mailto: confirmation email
+    // 3️⃣ Draft a confirmation email to the customer via mailto
     const startDt = new Date(`${selectedDate}T${selectedTime}:00`);
     const dateStr = startDt.toLocaleDateString("en-US", {
       weekday: "long",
@@ -96,12 +115,12 @@ export default function DemoPage() {
     });
 
     const mailBody = encodeURIComponent(
-      `Hi ${name},\n\nYour Lengenie strategy call is confirmed!\n\n📅 Date: ${dateStr}\n🕐 Time: ${timeStr}\n📍 Location: Google Meet (link will be sent separately)\n\nWe look forward to speaking with you!\n\nBest,\nThe Lengenie Team\nlengenie.com`
+      `Hi ${name},\n\nYour Lengenie strategy call is confirmed!\n\n📅 Date: ${dateStr}\n🕐 Time: ${timeStr}\n📍 Location: Google Meet (link will be sent separately)\n\nWe look forward to speaking with you!\n\nBest,\nThe Lengenie Team\nlengenie.vercel.app`
     );
     const mailSubject = encodeURIComponent("Your Lengenie Strategy Call Confirmation");
     window.location.href = `mailto:${email}?subject=${mailSubject}&body=${mailBody}`;
 
-    setSubmitted(true);
+    setSubmitting(false);
     setStep("confirm");
   };
 
@@ -136,6 +155,16 @@ export default function DemoPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Team Image Block */}
+        <div className="relative w-full h-[300px] sm:h-[400px] rounded-[6px] overflow-hidden border border-border mb-12">
+          <Image
+            src="/images/ team section.jpeg"
+            alt="The Lengenie AI Team"
+            fill
+            className="object-cover opacity-80"
+          />
         </div>
 
         {/* Booking Widget */}
@@ -322,9 +351,17 @@ export default function DemoPage() {
 
                 <button
                   onClick={handleBookConfirm}
-                  className="btn-primary w-full sm:w-auto"
+                  disabled={submitting}
+                  className={`btn-primary w-full sm:w-auto flex items-center gap-2 ${submitting ? "opacity-60 cursor-not-allowed" : ""}`}
                 >
-                  📅 Confirm & Add to Google Calendar
+                  {submitting ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-black/40 border-t-black rounded-full animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    "📅 Confirm & Add to Google Calendar"
+                  )}
                 </button>
 
                 <p className="text-text-tertiary text-[12px] mt-4">
